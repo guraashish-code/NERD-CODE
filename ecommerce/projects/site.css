@@ -1,0 +1,66 @@
+/* Layout Flow */
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #161b22;
+    border-bottom: 1px solid #30363d;
+}
+.pro { color: #ff00ff; font-weight: bold; font-size: 1.2rem; }
+.ject { color: #0070f3; font-weight: bold; font-size: 1.2rem; }
+.nav-links { list-style: none; }
+.nav-links a { color: #c9d1d9; text-decoration: none; font-weight: bold; }
+
+/* Project Card */
+.project-card { background: #161b22; padding: 30px; border-radius: 15px; text-align: center; border: 1px solid #30363d; }
+.rgb-title { font-size: 3rem; margin-bottom: 20px; text-shadow: 0 0 10px #ff0000, 0 0 20px #00ff00, 0 0 30px #0000ff; }
+.button-group { display: flex; gap: 15px; justify-content: center; margin-top: 25px; }
+.btn { padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; color: white; }
+.view-btn { background-color: #28a745; }
+.download-btn { background-color: #0070f3; }
+
+/* Gallery */
+.gallery-grid {
+    display: flex !important;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.gallery-item {
+    display: block;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px solid #30363d;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+.gallery-item:hover { transform: scale(1.05); border-color: #58a6ff; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Footer */
+.footer { text-align: center; padding: 40px; border-top: 1px solid #30363d; background: #161b22; color: #8b949e; }
+.footer a { color: #58a6ff; text-decoration: none; }
+.back-link { display: block; margin: 40px 0; color: #58a6ff; text-decoration: none; text-align: center; }

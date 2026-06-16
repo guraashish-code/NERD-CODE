@@ -144,12 +144,27 @@ main {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
+/* This ensures the button stays green even after you click it */
 .view-btn {
-    display: inline-block;
-    margin-top: 15px;
-    color: #00ff00;
+    background-color: #28a745; /* Your Green color */
+    color: white;             
     text-decoration: none;
-    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 8px;
+    display: inline-block;
+    border: none;             /* Removes any default borders */
+}
+
+/* This is the secret step: force the visited state to remain green */
+.view-btn:visited {
+    background-color: #28a745; 
+    color: white;
+}
+
+/* Optional: Add a slight hover effect to make it look professional */
+.view-btn:hover {
+    background-color: #218838; /* A darker green when hovering */
+    cursor: pointer;
 }
 
 /* --- 6. FOOTER --- */
