@@ -1,0 +1,341 @@
+/* --- RIFF & RIDGE: COMPLETE STYLESHEET --- */
+
+/* 1. General Page Defaults (Dark Mode) */
+body {
+    background-color: #121212; /* Deep black background */
+    color: #e0e0e0;             /* Light gray text (not pure white) */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean body font */
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. HEADER WITH RGB NEON GLOW --- */
+
+header {
+    background-color: #121212; /* Keeps dark mode so neon glows pop */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    padding: 10px 40px; /* RESTORED: Original compact vertical padding */
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Alignment */
+.logo-container {
+    display: flex;
+    align-items: center; 
+    gap: 15px; /* RESTORED: Original crisp spacing */
+}
+
+/* The Vinyl Record Image */
+.nav-logo-img {
+    height: 50px; /* RESTORED: Original compact height */
+    width: 50px;  /* RESTORED: Original compact width */
+    object-fit: contain;
+}
+
+/* 70s Gradient Brand Text */
+.logo-text {
+    font-family: 'Arial Black', 'Helvetica Bold', sans-serif; 
+    font-size: 1.8rem;
+    margin: 0;
+    text-transform: uppercase; 
+    letter-spacing: -1px;      
+
+    /* Seamless RGB cycle on the brand name text */
+    animation: rgbTextGlow 8s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Navigation Links Area */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* RESTORED: Original tighter gap between links and icons */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Turning Nav Links into Neon Buttons */
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 12px; /* Slimmed down padding for original height constraint */
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all 0.4s ease;
+    animation: rgbNeonGlow 8s linear infinite;
+}
+
+nav a:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Search and Cart Icons Area */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-btn, .cart-link {
+    background: none;
+    color: #ffffff;
+    border: 1px solid transparent;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 6px; /* Trimmed padding to match the compact height */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    animation: rgbNeonGlow 8s linear infinite;
+    transition: all 0.4s ease;
+}
+
+.icon-btn:hover, .cart-link:hover {
+    transform: scale(1.05);
+}
+
+.cart-count {
+    font-size: 0.8rem;
+    margin-left: 5px;
+    color: #ffffff;
+}
+
+/* --- KEEP THE ANIMATION LOGIC BELOW THIS EXACTLY THE SAME --- */
+@keyframes rgbNeonGlow {
+    0%, 100% {
+        border-color: #00f0ff;
+        box-shadow: 0 0 8px rgba(0, 240, 255, 0.3), inset 0 0 4px rgba(0, 240, 255, 0.2);
+    }
+    33% {
+        border-color: #ff007f;
+        box-shadow: 0 0 8px rgba(255, 0, 127, 0.3), inset 0 0 4px rgba(255, 0, 127, 0.2);
+    }
+    66% {
+        border-color: #8a2be2;
+        box-shadow: 0 0 8px rgba(138, 43, 226, 0.3), inset 0 0 4px rgba(138, 43, 226, 0.2);
+    }
+}
+
+@keyframes rgbTextGlow {
+    0%, 100% {
+        background: linear-gradient(to right, #00f0ff, #8a2be2);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    33% {
+        background: linear-gradient(to right, #8a2be2, #ff007f);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    66% {
+        background: linear-gradient(to right, #ff007f, #00f0ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+/* 4. Hero Section (Welcome Banner) */
+/* --- FIXED HERO FORMATTING WITH TRANSPARENT BACKGROUND --- */
+.hero {
+    /* 1. Keeps the background completely clear for your video */
+    background: transparent; 
+
+    /* 2. Fixes the scattering by resetting the flexbox alignment */
+    display: flex;
+    flex-direction: column;   /* Stacks your heading, text, and spinning record vertically */
+    align-items: center;      /* Centers everything perfectly horizontally */
+    justify-content: center;   /* Centers everything perfectly vertically */
+    text-align: center;       /* Makes sure all heading and paragraph text is centered */
+    
+    /* 3. Restores the structured spacing around the content */
+    padding: 60px 20px;       
+    min-height: 60vh;         /* Gives the section its original defined height under the navbar */
+    box-sizing: border-box;
+}
+
+/* --- QUICK FIX FOR SPACING INSIDE THE HERO --- */
+.hero > * {
+    margin-bottom: 20px;      /* Puts uniform breathing room between your text and the record */
+}
+
+.hero > *:last-child {
+    margin-bottom: 0;         /* Prevents extra accidental spacing at the bottom */
+}
+
+.hero h2 {
+    color: #ffffff;
+    font-size: 3.5rem; /* Slightly larger to match the grand cosmic theme */
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Drop shadow to pop out from the background */
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: #f0f0f0; /* Lighter text for better cosmic readability */
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Updated Button to pop against the Nebula background */
+.btn {
+    background: linear-gradient(to right, #0056b3, #6f42c1);
+    color: white;
+    text-decoration: none;
+    padding: 14px 35px;
+    border-radius: 4px; /* Squared edges to match the clean button style */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(111, 66, 193, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(111, 66, 193, 0.6);
+}
+
+
+/* 5. Main Content (Product Showcase) */
+main {
+    padding: 60px 40px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: white;
+    border-bottom: 2px solid #8a2be2;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+}
+
+/* Product Grid Layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Individual Product Cards */
+.product-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #8a2be2;
+}
+
+/* --- RESTORED ORIGINAL PRODUCT IMAGE STYLING --- */
+
+/* --- EXACT UNIFORM DIMENSIONS FOR VINYL & TEES --- */
+
+.product-card img {
+    width: 100%;          /* Matches the exact width scaling of the vinyl */
+    aspect-ratio: 1 / 1;  /* Forces a perfect square, identical to a vinyl record sleeve */
+    object-fit: cover;    /* Ensures the tee images fill the square completely without stretching */
+    display: block;       
+    border-radius: 4px;   
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    color: white;
+    margin: 15px 0 2px 0;
+}
+
+/* Styled band name accent */
+.artist {
+    color: #8a2be2; /* Soft purple match for your RGB theme */
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.price {
+    color: #aaaaaa;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    width: 100%;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.add-to-cart:hover {
+    background-color: white;
+    color: #121212;
+}
+
+/* 6. Footer Section */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
+    color: #777;
+    font-size: 0.9rem;
+}
+/* --- FULLSCREEN LOCAL BACKGROUND VIDEO --- */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* Stretches the video cleanly without stretching or squeezing it */
+    z-index: -1;           /* Pushes it behind your vinyl records, tees, and text */
+    pointer-events: none;   /* Crucial: Allows you to click buttons right "through" the video */
+}
+
+/* --- REMOVE OLD BACKGROUND IMAGES --- */
+body {
+    background: transparent; /* Clears out the old space wallpaper so the video shines through */
+    color: white;
+    margin: 0;
+}
